@@ -1,3 +1,4 @@
+
 <?php
     include_once 'import/header.php';
 ?>
@@ -28,26 +29,22 @@
 </div>
 
 <div class="faq-container">
-    <h1>Frequently Asked Questions (FAQs)</h1>
+    <h1>National Call Centre/IVRS</h1>
 
     <div class="faq-item">
-        <h2>1. How can I book a flight?</h2>
-        <p>You can easily book a flight by going to our homepage and using our flight booking form. Enter your travel details, select a flight, and complete the booking process.</p>
+        <p>For any information and suggestions on Passport services, please call at 1800-258-1800 (Toll Free) or write to us through accessing the "Feedback" Box</p>
     </div>
 
     <div class="faq-item">
-        <h2>2. Can I change my booking?</h2>
-        <p>Yes, you can change your booking by logging into your account and accessing the Manage Booking section. Follow the instructions to modify your reservation.</p>
+        <h2>National Call Centre Timings:</h2>
+        <p>1. Citizen Service Executive Support: 8 AM to 10 PM<br>
+        2. Automated Interactive Voice Response (IVRS) Support: 24 hours</p>
     </div>
 
     <div class="faq-item">
-        <h2>10. How can I contact customer support?</h2>
-        <p>You can reach our customer support team through our Contact Us page or by calling our customer service hotline at +123 456 789.</p>
+        <p><b>Note:</b>  We are temporarily facing connectivity issue at toll free number 1800-258-1800 in Jammu & Kashmir and North East States. Citizens are requested to dial 040-66720567(paid) for J&K and 040-66720581(paid) for NE states. Inconvenience caused is regretted.</p>
     </div>
 </div>
-
-
-    <!-- this section is hidden. only applied when user clicked sign up or login button -->
     <?php
     include_once 'login.php';
     ?>

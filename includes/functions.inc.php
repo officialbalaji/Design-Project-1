@@ -1,4 +1,44 @@
 <?php
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../PHPMailer/src/PHPMailer.php';
+require '../PHPMailer/src/Exception.php';
+require '../PHPMailer/src/SMTP.php'; 
+
+function generateOTP() {
+    return rand(100000, 999999); ;
+}
+function sendOTP($recipientEmail) {
+    $otp = generateOTP();
+
+    $mail = new PHPMailer(true);
+    try {
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'dpips2024@gmail.com';         
+        $mail->Password   = 'ijcf rsjc lqlr bvht';          
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = 587;
+        $mail->setFrom('dpips2024@gmail.com', 'Passport System');
+        $mail->addAddress($recipientEmail);
+        $mail->isHTML(true);
+        $mail->Subject = 'OTP!';
+        $mail->Body = 'One-Time Password!<br>Your OTP code is: <b>' . htmlspecialchars($otp) . '</b><br><p>Do Not Send This OTP Code!</p>';
+        $mail->send();
+        
+        echo "<script> alert('OTP sent to " . htmlspecialchars($recipientEmail) . "'); </script>";
+        
+        return $otp;
+    } catch (Exception $e) {
+        error_log("Mailer Error: " . $mail->ErrorInfo); // Log error for server admins
+        echo "<script> alert('Error: Unable to send OTP. Please try again later.'); </script>";
+    }
+}
+
+
 function emptyInputSignup($fname, $lname, $username, $email, $psw, $pswrepeat) {
     return empty($fname) || empty($lname) || empty($username) || empty($email) || empty($psw) || empty($pswrepeat);
 }
@@ -12,7 +52,7 @@ function invalidEmail($email) {
 }
 
 function pswMatch($psw, $pswrepeat) {
-    return $psw !== $pswrepeat;
+    return strcmp($psw, $pswrepeat) !== 0;
 }
 
 function usernameExists($conn, $username, $email) {
@@ -46,7 +86,6 @@ function createUser($conn, $fname, $lname, $email, $username, $psw) {
 
     $hashedPsw = password_hash($psw, PASSWORD_DEFAULT);
     mysqli_stmt_bind_param($stmt, "sssss", $fname, $lname, $username, $email, $hashedPsw);
-
     if (mysqli_stmt_execute($stmt)) {
         return true;
     } else {

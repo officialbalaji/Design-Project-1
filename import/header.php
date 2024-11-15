@@ -7,16 +7,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fly Master</title>
+    <title>Integrated Passport System</title>
 
-    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/style1.css">
     <link rel="stylesheet" href="CSS/aboutus.css">
     <link rel="stylesheet" href="CSS/login.css">
-    <link rel="stylesheet" href="CSS/contact.css">
-    <link rel="stylesheet" href="CSS/account.css">
-
-    <link rel="icon" href="../images/logo.png">
-    
+    <link rel="stylesheet" href="CSS/contactUs.css">
+    <link rel="stylesheet" href="CSS/account.css">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 
@@ -91,26 +88,14 @@
         
 </head>
 <body>
-    <div class="header">
-    <div class="left">
-        <a href="index.php"><img src="images/logo.png" alt="logo" class="logo"></a>
-        <h6 class="title">Fly Master</h6>
-        <?php
+    <div class="topnav" id="myTopnav">
+    <a class="click" style="color: black;" href="support.php">Support</a>
+    <?php
         if (isset($_SESSION["fname"])) {
             
-            echo '<a href="account.php" class="signprofile"><img src="images/profile.jpg" alt="logo" class="profile"></a>';
-        } else {
-            
-            echo '<a href="#" class="signprofile" onclick="document.getElementById(\'id01\').style.display=\'block\'"><img src="images/profile.jpg" alt="logo" class="profile"></a>';
-        }
+            echo '<a href="account.php" ><img class="signprofile" src="images/profile.jpg" alt="logo" class="profile"></a>';
+        } 
         ?>
-    </div>
-</div>
-
-
-        <div class="topnav" id="myTopnav">
-    
-    <a class="click" style="color: black;" href="support.php">Support</a>
     <?php
     if (isset($_SESSION["fname"])) {
         

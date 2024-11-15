@@ -6,20 +6,20 @@
 
 <div class="about-us">
     <div class="info">
-        <div class="number">12,000+</div>
-        <div class="description">Dedicated Employees Worldwide</div>
+        <div class="number">11,07,88,447+</div>
+        <div class="description">Passport Issued(India)</div>
     </div>
     <div class="info">
-        <div class="number">79</div>
-        <div class="description">Exciting Destinations</div>
+        <div class="number">1,23,75,909+</div>
+        <div class="description">Passport Issued(Abroad)</div>
     </div>
     <div class="info">
-        <div class="number">59</div>
-        <div class="description">Nonstop International Routes</div>
+        <div class="number">6 days</div>
+        <div class="description">Average Passport Issuance Time</div>
     </div>
     <div class="info">
-        <div class="number">90</div>
-        <div class="description">Years Of Excellence</div>
+        <div class="number">2,47,510+</div>
+        <div class="description">Application Receied</div>
     </div>
 </div>
 
@@ -28,15 +28,15 @@
 <div class="flex-container">
     <div class="content">
         <h2>Our Vision</h2>
-        <p>At Fly Master, our vision is to provide travelers with the most convenient, efficient, and enjoyable air travel experience. We aim to set new industry standards by leveraging innovation and technology to redefine the booking process and make it customer-centric.</p>
+        <p>To deliver passport services to citizens in a timely, transparent, more accessible and reliable manner and in a comfortable environment through streamlined processes; and by a committed, trained and motivated workforce.</p>
     </div>
     <div class="content">
         <h2>Our Mission</h2>
-        <p>Our mission at Fly Master is to revolutionize the travel industry by delivering exceptional value to our customers, partners, and stakeholders. We strive to combine cutting-edge technology with outstanding service, making air travel accessible and enjoyable for everyone.</p>
+        <p><b>Deliver passport services to citizens : </b> The mission of IPS(Integrated Passport System) is to deliver passport services to citizens in a timely, transparent, accessible, and reliable manner</p>
     </div>
     <div class="content">
         <h2>Our Services</h2>
-        <p>We offer a wide range of services to meet all your travel needs. From easy booking to personalized experiences and exceptional support, Fly Master is your trusted travel companion. Our commitment to security and reliability ensures your journey is safe and worry-free.</p>
+        <p>For any information and suggestions on Passport services, please call at 1800-258-1800 (Toll Free) or write to us through accessing the "Feedback" link on the Contact-us Page.</p>
     </div>
 </div>
 

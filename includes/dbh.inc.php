@@ -2,7 +2,7 @@
 $serverName = "localhost";
 $dbUserName = "root";
 $dbPassword = "";
-$dbName = "flymaster_login";
+$dbName = "ips";
 
 $conn =new mysqli($serverName, $dbUserName, $dbPassword, $dbName);
 
