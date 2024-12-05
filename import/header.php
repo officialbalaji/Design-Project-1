@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Integrated Passport System</title>
 
-    <link rel="stylesheet" href="CSS/style1.css">
+    <link rel="stylesheet" href="CSS/csss.css">
     <link rel="stylesheet" href="CSS/aboutus.css">
     <link rel="stylesheet" href="CSS/login.css">
     <link rel="stylesheet" href="CSS/contactUs.css">
@@ -111,7 +111,7 @@
           
           <div class="nav" id="nav">
             <a href="index.php" class="click" style="color: black;">Home</a>
-            <a href="bookticket.php" class="click" style="color: black;">Ticket Booking</a>
+            <a href="passport.php" class="click" style="color: black;">Passport</a>
             <a href="contactus.php" class="click" style="color: black;">Contact Us</a>
             <a href="aboutus.php" class="click" style="color: black;">About Us</a>
          </div>

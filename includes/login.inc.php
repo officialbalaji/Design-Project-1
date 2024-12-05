@@ -17,18 +17,9 @@ if (isset($_POST["login"])) {
         $lname = $_SESSION["lname"];
         $uname = $_SESSION["username"];
         $email = $_SESSION["email"];
-        $pic = $_SESSION["pic"];
-        $tel = $_SESSION["tel"];
-        $meal = $_SESSION["meal"];
-        $name = $_SESSION["name"];
-        $age = $_SESSION["age"];
-        $gender = $_SESSION["gender"];
-        $nation = $_SESSION["nation"];
-        $country = $_SESSION["country"];
-        $uid = $_SESSION["uid"];
 
         if($uname === 'admin'){
-            echo '<script>window.alert("Welcome System admin!"); window.location.href = "../admin/register.php?login=success";</script>';
+            echo '<script>alert("Welcome System admin!"); window.location.href = "../admin/register.php?login=success";</script>';
 
         } elseif ($uname === 'fcontroller')
 
@@ -37,7 +28,7 @@ if (isset($_POST["login"])) {
         }
 
         else{
-            header("Location:../bookticket.php?login=success"); 
+            echo '<script>window.alert("Login Successfull!"); window.location.href = "../index.php?login=success";</script>';
         }
         
         exit();

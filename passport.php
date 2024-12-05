@@ -4,11 +4,6 @@
 
 
 <?php
-    include_once 'import/heading.php';
-?>
-
-
-<?php
     include_once 'import/select.php';
 ?>  
           

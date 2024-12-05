@@ -12,32 +12,49 @@ function generateOTP() {
 }
 function sendOTP($recipientEmail) {
     $otp = generateOTP();
-
     $mail = new PHPMailer(true);
     try {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'dpips2024@gmail.com';         
-        $mail->Password   = 'ijcf rsjc lqlr bvht';          
+        $mail->Password   = 'olhi qudj ffnd ddri';          
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
         $mail->setFrom('dpips2024@gmail.com', 'Passport System');
         $mail->addAddress($recipientEmail);
         $mail->isHTML(true);
         $mail->Subject = 'OTP!';
-        $mail->Body = 'One-Time Password!<br>Your OTP code is: <b>' . htmlspecialchars($otp) . '</b><br><p>Do Not Send This OTP Code!</p>';
+        $mail->Body = 'One-Time Password!<br>Your OTP code is : <b>' . htmlspecialchars($otp) . '</b><br><p>Do Not Send This OTP Code!</p>';
         $mail->send();
-        
         echo "<script> alert('OTP sent to " . htmlspecialchars($recipientEmail) . "'); </script>";
-        
         return $otp;
     } catch (Exception $e) {
         error_log("Mailer Error: " . $mail->ErrorInfo); // Log error for server admins
         echo "<script> alert('Error: Unable to send OTP. Please try again later.'); </script>";
     }
 }
-
+function sendEmail($recipientEmail, $sub, $msg){
+    $mail = new PHPMailer(true);
+    try {
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'dpips2024@gmail.com';         
+        $mail->Password   = 'olhi qudj ffnd ddri';          
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = 587;
+        $mail->setFrom('dpips2024@gmail.com', 'Passport System');
+        $mail->addAddress($recipientEmail);
+        $mail->isHTML(true);
+        $mail->Subject = $sub;
+        $mail->Body = $msg;
+        $mail->send();
+    } catch (Exception $e) {
+        error_log("Mailer Error: " . $mail->ErrorInfo); // Log error for server admins
+        echo "<script> alert('Error: Unable to send the Mail. Please try again later.'); </script>";
+    }
+}
 
 function emptyInputSignup($fname, $lname, $username, $email, $psw, $pswrepeat) {
     return empty($fname) || empty($lname) || empty($username) || empty($email) || empty($psw) || empty($pswrepeat);
@@ -116,19 +133,7 @@ function loginUser($conn, $username, $psw) {
         $_SESSION["username"] = $userExists["uname"];
         $_SESSION["email"] = $userExists["email"];
         $_SESSION["fname"] = $userExists["fname"];
-        $_SESSION["lname"] = $userExists["lname"];
-        $_SESSION["pic"] = $userExists["pic"];
-        $_SESSION["tel"] = $userExists["tel"];
-        $_SESSION["meal"] = $userExists["meal"];
-        $_SESSION["name"] = $userExists["name"];
-        $_SESSION["age"] = $userExists["age"];
-        $_SESSION["gender"] = $userExists["gender"];
-        $_SESSION["nation"] = $userExists["nation"];
-        $_SESSION["country"] = $userExists["country"];
-        $_SESSION["uid"] = $userExists["uid"];
-
-
-        
+        $_SESSION["lname"] = $userExists["lname"];        
         return true;
         
 

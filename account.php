@@ -11,23 +11,6 @@ if (isset($_SESSION["fname"]) && isset($_SESSION["lname"]) && isset($_SESSION["u
     $email = $_SESSION["email"];
 
     include_once 'includes/dbh.inc.php';
-
-    $sql = "SELECT * FROM users WHERE uname = '$uname'";
-    $result = mysqli_query($conn, $sql);
-
-    if ($result) {
-        $userData = mysqli_fetch_assoc($result);
-        $tel = $userData["tel"];
-        $meal = $userData["meal"];
-        $name = $userData["name"];
-        $age = $userData["age"];
-        $gender = $userData["gender"];
-        $nation = $userData["nation"];
-        $country = $userData["country"];
-    } else {
-        
-        echo "Error: " . mysqli_error($conn);
-    }
 ?>
 
 
@@ -41,13 +24,6 @@ if (isset($_SESSION["fname"]) && isset($_SESSION["lname"]) && isset($_SESSION["u
     <p><b>Email:</b> <?php echo $email; ?></p>
     <p><b>First Name:</b> <?php echo $fname; ?></p>
     <p><b>Last Name:</b> <?php echo $lname; ?></p>
-    <p><b>Name as in passport:</b> <?php echo $name; ?></p>
-    <p><b>Phone Number:</b> <?php echo $tel; ?></p>
-    <p><b>Prefered Meal Type:</b> <?php echo $meal; ?></p>
-    <p><b>Age:</b> <?php echo $age; ?></p>
-    <p><b>Gender:</b> <?php echo $gender; ?></p>
-    <p><b>Nationality:</b> <?php echo $nation; ?></p>
-    <p><b>Country:</b> <?php echo $country; ?></p>
     
    
     <button type="button" id="delete-account-button" onclick="deleteAccount()">Delete Account</button>

@@ -35,6 +35,7 @@ if (isset($_POST["signup"])) {
         exit();
     }
     session_start();
+    $_SESSION['onetimepassword']="otp_createUser";
     $_SESSION['user_data'] = ['conn' => $conn,'fn' => $fname,'ln' => $lname,'email' => $email,'u'=>$username,'psw' => $psw,'otp'=>sendOTP($email)];
     echo '<script>window.location.href = "../includes/otpverified.php";</script>';
 }

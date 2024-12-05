@@ -30,7 +30,7 @@
       <label for="pswrepeat"><b>Confirm Password</b></label>
       <input type="password" placeholder="Re-enter your password" name="pswrepeat" required>
         
-      <button type="submit" name="signup" class="login-button">Creat account</button>
+      <button type="submit" name="signup" class="login-button">Create account</button>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">

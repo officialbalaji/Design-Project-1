@@ -1,0 +1,196 @@
+<!DOCTYPE html><!--working form-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passport Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        h2 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .radio-group label {
+            margin: 0;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .form-section {
+            display: none;
+        }
+        .form-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Passport Application Form</h1>
+        <form id="passport-form">
+            <!-- Section 1 -->
+            <div class="form-section active" id="section-1">
+                <h2>Applicant Details</h2>
+                <label>Given Name *</label>
+                <input type="text" name="given_name" maxlength="45" required>
+                <label>Surname *</label>
+                <input type="text" name="surname" maxlength="45" required>
+                <label>Gender *</label>
+                <div class="radio-group" required>
+                    <label><input type="radio" name="gender" value="male" required> Male</label>
+                    <label><input type="radio" name="gender" value="female" required> Female</label>
+                    <label><input type="radio" name="gender" value="transgender" required> Transgender</label>
+                </div>
+                <label>Date of Birth (DD/MM/YYYY) *</label>
+                <input type="date" name="dob" required>
+                <label>Place of Birth *</label>
+                <input type="text" name="birth_place" required>
+                <label>Marital Status *</label>
+                <select name="marital_status" required>
+                    <option value="">Select</option>
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                    <option value="divorced">Divorced</option>
+                </select>
+            </div>
+            
+
+            <!-- Section 2 -->
+            <div class="form-section" id="section-2">
+                <h2>Present Residential Address</h2>
+                <label>Is your present address out of India?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="address_out_of_india" value="yes" required> Yes</label>
+                    <label><input type="radio" name="address_out_of_india" value="no" required> No</label>
+                </div>
+                <label>House No. and Street Name *</label>
+                <input type="text" name="house_street" required>
+                <label>Village/Town/City *</label>
+                <input type="text" name="village_town_city" required>
+                <label>State/UT *</label>
+                <input type="text" name="state_ut" required>
+                <label>District *</label>
+                <input type="text" name="district" required>
+                <label>Police Station *</label>
+                <input type="text" name="police_station" required>
+                <label>PIN Code *</label>
+                <input type="text" name="pin_code" required>
+                <label>Mobile Number *</label>
+                <input type="text" name="mobile_number" required>
+                <label>Telephone Number</label>
+                <input type="text" name="telephone_number">
+                <label>E-mail ID *</label>
+                <input type="email" name="email_id" required>
+            </div>
+
+           
+
+            <!-- Section 3 -->
+            <div class="form-section" id="section-3">
+                <h2>Additional Details</h2>
+                <label>Aadhaar Number</label>
+                <input type="text" name="aadhaar" required>
+                <label>Voter ID Number </label>
+                <input type="text" name="voter">
+                <label>Pan Number </label>
+                <input type="text" name="pan">
+                <label>Educational Qualification *</label>
+                <select name="education" required>
+                    <option value="">Select</option>
+                    <option value="undergraduate">Undergraduate</option>
+                    <option value="graduate">Graduate</option>
+                    <option value="postgraduate">Postgraduate</option>
+                </select>
+                
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="button-group">
+                <button type="button" id="prevBtn" onclick="prevStep()"><< Prev</button>
+                <button type="button" id="nextBtn" onclick="nextStep()">Next >></button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let currentStep = 0;
+        const formSections = document.querySelectorAll('.form-section');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function showStep(step) {
+            formSections.forEach((section, index) => {
+                section.classList.toggle('active', index === step);
+            });
+            prevBtn.style.display = step === 0 ? 'none' : 'inline-block';
+            nextBtn.textContent = step === formSections.length - 1 ? 'Submit' : 'Next >>';
+        }
+
+        function nextStep() {
+            if (currentStep < formSections.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            } else {
+                document.getElementById('passport-form').submit(); //form submition BS!
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+
+        showStep(currentStep);
+    </script>
+</body>
+</html>
